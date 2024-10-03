@@ -1,0 +1,26 @@
+{# templates/author/listAuthor.html.twig #}
+<h1>List of Authors</h1>
+
+{% if authors is defined and authors is not empty %}
+    <ul>
+        {% for author in authors %}
+            <li>
+                <img src="{{ asset(author.picture) }}" alt="{{ author.username }}" width="50">
+                <strong>{{ author.username|upper }}</strong>
+                ({{ author.nb_books }} books)
+                <!-- Lien vers les détails de l'auteur -->
+                <a href="{{ path('author_details', {'id': author.id}) }}">Details</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p>Total authors: {{ authors|length }}</p>
+
+    {% set total_books = 0 %}
+    {% for author in authors %}
+        {% set total_books = total_books + author.nb_books %}
+    {% endfor %}
+    <p>Total books: {{ total_books }}</p>
+{% else %}
+    <p>No authors found.</p>
+{% endif %}

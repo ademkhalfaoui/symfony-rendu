@@ -6,6 +6,11 @@ if (!Encore.isRuntimeEnvironmentConfigured()) {
 }
 
 Encore
+.addEntry('app', './assets/js/app.js')
+//     .addEntry('js/app', './assets/js/app.js')
+//     .addStyleEntry('css/app')
+//     .addStyleEntry('css/app', './assets/css/app.scss')
+.enableSingleRuntimeChunk()
     // Directory where compiled assets will be stored
     .setOutputPath('public/build/')
     // Public path used by the web server to access the output path

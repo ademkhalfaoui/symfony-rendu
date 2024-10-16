@@ -1,3 +1,55 @@
-body{
-    background-color: #233452;
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Padding inside the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+    margin: 0 auto; /* Center the container */
+    width: 80%; /* Set a width */
+    max-width: 900px; /* Limit the maximum width */
+}
+
+.table {
+    margin: 20px 0; /* Spacing above and below the table */
+    width: 100%; /* Full width of the container */
+}
+
+.table th, .table td {
+    vertical-align: middle; /* Center content vertically */
+    padding: 15px; /* Padding for table cells */
+    text-align: center; /* Center-align text */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9; /* Light background for odd rows */
+}
+
+.table-striped tbody tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+img.rounded-circle {
+    border-radius: 50%; /* Make images circular */
+    width: 50px; /* Set image size */
+    height: 50px; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure image fits within the circle */
+}
+
+.text-center {
+    text-align: center; /* Center text */
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%; /* Full width on smaller screens */
+        padding: 10px; /* Reduce padding on smaller screens */
+    }
+    
+    .table {
+        font-size: 0.9rem; /* Adjust font size for better readability on small screens */
+    }
+
+    img.rounded-circle {
+        width: 40px; /* Reduce image size on smaller screens */
+        height: 40px; /* Maintain aspect ratio */
+    }
 }
